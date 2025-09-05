@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-emerald-100 flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl mb-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">User List</h1>
+        
+        {% if users %}
+            <ul class="space-y-4">
+                {% for user in users %}
+                    <li class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="text-gray-700">
+                            <strong>Name:</strong> {{ user.name }}
+                        </div>
+                        <div class="text-gray-700">
+                            <strong>Email:</strong> {{ user.email }}
+                        </div>
+                        <div class="text-gray-700">
+                            <strong>User Type:</strong> {{ user.user_type }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-center text-gray-500">No users found.</p>
+        {% endif %}
+    </div>
+
+    <a href="{% url 'user_create' %}" class="w-full max-w-sm bg-purple-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-purple-700 transition duration-300 text-center">
+        Create New User
+    </a>
+</body>
+</html>
