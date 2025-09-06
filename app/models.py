@@ -39,9 +39,12 @@ class Apartment(models.Model):
     apartment_code = models.CharField(max_length=5)
     location_name = models.CharField(max_length=50)
     road = models.CharField(max_length=100)
-    bedrooms = models.IntegerField(default=1)
+    bedrooms = models.CharField(max_length=20)
     rent = models.DecimalField(max_digits=10, decimal_places=2)
     caretaker = models.ForeignKey(Caretaker, on_delete=models.CASCADE, related_name='apartments')
+
+    def __str__(self):
+        return f"{self.name}, {self.description}, {self.apartment_code}, {self.location_name}, {self.road}, {self.bedrooms}, {self.rent}, {self.caretaker}"
 
 class ApartmentImage(models.Model):
     image_url = models.CharField(max_length=255)
