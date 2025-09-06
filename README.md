@@ -11,13 +11,4 @@ Here is an example of a POST request body for creating a new user:
   "user_type": "Tenant"
 }
 
-{
-    "name": "By Faith Apartment",
-    "description": "Modern Apartment",
-    "apartment_code": "D12",
-    "location_name": "Kiambu",
-    "road": "Kiambu Road",
-    "bedrooms": "2",
-    "rent": "18000.00",
-    "caretaker": "Lisbeth Njeri"
-}
+The users will have a unique profile that will allow them to interact with what they have to offer; units or tenancy
